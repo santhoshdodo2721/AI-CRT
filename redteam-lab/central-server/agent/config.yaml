@@ -1,0 +1,39 @@
+server_url: "http://localhost:8000"   # change to your central server IP
+agent_name: "lab-agent-01"
+heartbeat_interval: 30   # seconds
+poll_interval: 10        # seconds
+
+# Only modules in this list will execute on this agent.
+# Remove any module you don't want running on this host.
+allowed_modules:
+  - recon.nmap_scan
+  - recon.subdomain_scan
+  - recon.http_probe
+  - recon.service_detect
+  - recon.dirb_scan
+  - vuln_scan.nuclei_scan
+  - vuln_scan.sql_inject
+  - vuln_scan.zap_scan
+  - vuln_scan.trivy_scan
+  - vuln_scan.semgrep_scan
+  - vuln_scan.gitleaks_scan
+  - initial_access.default_creds_check
+  - initial_access.exposed_admin_check
+  - initial_access.known_cve_check
+  - execution.atomic_runner
+  - execution.command_test
+  - persistence.cron_test
+  - persistence.systemd_test
+  - privilege_escalation.sudo_check
+  - privilege_escalation.suid_check
+  - privilege_escalation.writable_path_check
+  - defense_evasion.encoded_command_test
+  - defense_evasion.detection_check
+  - credentials.env_secret_scan
+  - credentials.config_secret_scan
+  - credentials.repo_secret_scan
+  - lateral_movement.network_reachability
+  - lateral_movement.ssh_check
+  - exfiltration.egress_test
+  - exfiltration.dlp_check
+  - impact.cpu_load_test

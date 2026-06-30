@@ -1,0 +1,130 @@
+version: "1.0.0"
+modules:
+  reconnaissance:
+    nmap_scan:
+      technique_id: T1046
+      technique_name: "Network Service Discovery"
+      tactics: ["Discovery"]
+      subtechniques: []
+      description: "Port scanning with Nmap"
+      tool: "nmap"
+      risk_level: "low"
+    subdomain_scan:
+      technique_id: T1595.002
+      technique_name: "Active Scanning"
+      tactics: ["Reconnaissance"]
+      subtechniques: []
+      description: "Subdomain enumeration"
+      tool: "subfinder, amass"
+      risk_level: "low"
+  initial_access:
+    default_creds_check:
+      technique_id: T1078
+      technique_name: "Valid Accounts"
+      tactics: ["Initial Access"]
+      subtechniques: [T1078.001]
+      description: "Check for default credentials"
+      tool: "hydra"
+      risk_level: "medium"
+      requires_approval: true
+    known_cve_check:
+      technique_id: T1190
+      technique_name: "Exploit Public-Facing Application"
+      tactics: ["Initial Access"]
+      subtechniques: []
+      description: "Check for known CVEs"
+      tool: "nuclei"
+      risk_level: "low"
+  execution:
+    atomic_runner:
+      technique_id: T1059
+      technique_name: "Command and Scripting Interpreter"
+      tactics: ["Execution"]
+      subtechniques: [T1059.004]
+      description: "Run safe command tests"
+      tool: "custom"
+      risk_level: "low"
+  persistence:
+    cron_test:
+      technique_id: T1053.003
+      technique_name: "Scheduled Task/Job: Cron"
+      tactics: ["Persistence"]
+      subtechniques: []
+      description: "Test cron job persistence"
+      tool: "custom"
+      risk_level: "low"
+      requires_approval: true
+  privilege_escalation:
+    sudo_check:
+      technique_id: T1548.003
+      technique_name: "Abuse Elevation Control: Sudo"
+      tactics: ["Privilege Escalation"]
+      subtechniques: []
+      description: "Check sudo misconfigs"
+      tool: "custom"
+      risk_level: "low"
+    suid_check:
+      technique_id: T1548.001
+      technique_name: "Abuse Elevation Control: SUID"
+      tactics: ["Privilege Escalation"]
+      subtechniques: []
+      description: "Find SUID binaries"
+      tool: "find"
+      risk_level: "low"
+  defense_evasion:
+    encoded_command_test:
+      technique_id: T1059.001
+      technique_name: "Command and Scripting Interpreter: PowerShell"
+      tactics: ["Defense Evasion"]
+      subtechniques: []
+      description: "Test encoded command execution"
+      tool: "custom"
+      risk_level: "low"
+  credential_access:
+    env_secret_scan:
+      technique_id: T1552.001
+      technique_name: "Unsecured Credentials: In Files"
+      tactics: ["Credential Access"]
+      subtechniques: []
+      description: "Scan env files for secrets"
+      tool: "trufflehog"
+      risk_level: "low"
+  lateral_movement:
+    ssh_check:
+      technique_id: T1021.004
+      technique_name: "Remote Services: SSH"
+      tactics: ["Lateral Movement"]
+      subtechniques: []
+      description: "SSH lateral movement testing"
+      tool: "ssh"
+      risk_level: "low"
+  impact:
+    cpu_load_test:
+      technique_id: T1499.001
+      technique_name: "Endpoint Denial of Service"
+      tactics: ["Impact"]
+      subtechniques: []
+      description: "Brief CPU load test"
+      tool: "stress"
+      risk_level: "medium"
+      requires_approval: true
+playbooks:
+  full_chain_linux:
+    name: "Full Attack Chain - Linux"
+    phases:
+      - name: "Recon"
+        techniques: ["T1046"]
+      - name: "Initial Access"
+        techniques: ["T1078.001"]
+      - name: "Execution"
+        techniques: ["T1059.004"]
+      - name: "Lateral Movement"
+        techniques: ["T1021.004"]
+  phishing_simulation:
+    technique_id: T1566.002
+    technique_name: "Spearphishing Link"
+    tactics: ["Initial Access"]
+    subtechniques: []
+    description: "Simulated phishing link test"
+    tool: "gophish"
+    risk_level: "low"

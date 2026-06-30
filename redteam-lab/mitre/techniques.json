@@ -1,0 +1,135 @@
+{
+  "type": "attack-pattern",
+  "name": "Red Team Lab Coverage",
+  "domain": "enterprise-attack",
+  "versions": {
+    "attack": "14.1",
+    "navigator": "4.9.1"
+  },
+  "techniques": [
+    {
+      "techniqueID": "T1046",
+      "tactic": "reconnaissance",
+      "score": 100,
+      "color": "#66ff66",
+      "comment": "nmap_scan: Port scanning with Nmap",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1595.002",
+      "tactic": "reconnaissance",
+      "score": 100,
+      "color": "#66ff66",
+      "comment": "subdomain_scan: Subdomain enumeration",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1078",
+      "tactic": "initial-access",
+      "score": 100,
+      "color": "#66ff66",
+      "comment": "default_creds_check: Check for default credentials",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1078.001",
+      "tactic": "initial-access",
+      "score": 100,
+      "color": "#66ff66",
+      "comment": "default_creds_check (sub-tech)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1190",
+      "tactic": "initial-access",
+      "score": 100,
+      "color": "#66ff66",
+      "comment": "known_cve_check: Check for known CVEs",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1059",
+      "tactic": "execution",
+      "score": 100,
+      "color": "#66ff66",
+      "comment": "atomic_runner: Run safe command tests",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1059.004",
+      "tactic": "execution",
+      "score": 100,
+      "color": "#66ff66",
+      "comment": "atomic_runner (sub-tech)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1053.003",
+      "tactic": "persistence",
+      "score": 100,
+      "color": "#66ff66",
+      "comment": "cron_test: Test cron job persistence",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1548.003",
+      "tactic": "privilege_escalation",
+      "score": 100,
+      "color": "#66ff66",
+      "comment": "sudo_check: Check sudo misconfigs",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1548.001",
+      "tactic": "privilege_escalation",
+      "score": 100,
+      "color": "#66ff66",
+      "comment": "suid_check: Find SUID binaries",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1059.001",
+      "tactic": "defense-evasion",
+      "score": 100,
+      "color": "#66ff66",
+      "comment": "encoded_command_test: Test encoded command execution",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1552.001",
+      "tactic": "credential_access",
+      "score": 100,
+      "color": "#66ff66",
+      "comment": "env_secret_scan: Scan env files for secrets",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1021.004",
+      "tactic": "lateral-movement",
+      "score": 100,
+      "color": "#66ff66",
+      "comment": "ssh_check: SSH lateral movement testing",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1499.001",
+      "tactic": "impact",
+      "score": 100,
+      "color": "#66ff66",
+      "comment": "cpu_load_test: Brief CPU load test",
+      "enabled": true
+    }
+  ],
+  "legendItems": [
+    {
+      "label": "Covered",
+      "color": "#66ff66"
+    }
+  ],
+  "filters": {
+    "platforms": [
+      "Linux",
+      "Windows"
+    ]
+  }
+}

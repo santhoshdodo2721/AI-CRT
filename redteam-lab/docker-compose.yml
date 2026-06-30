@@ -1,0 +1,72 @@
+version: "3.9"
+
+services:
+
+  # ── PostgreSQL ──────────────────────────────────────────────────────────────
+  postgres:
+    image: postgres:16-alpine
+    container_name: redteam-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER:     redteam
+      POSTGRES_PASSWORD: redteam
+      POSTGRES_DB:       redteamdb
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U redteam -d redteamdb"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ── Central Server (FastAPI) ────────────────────────────────────────────────
+  server:
+    build:
+      context: ./central-server
+      dockerfile: ../docker/Dockerfile.server
+    container_name: redteam-server
+    restart: unless-stopped
+    environment:
+      DATABASE_URL:  postgresql://redteam:redteam@postgres:5432/redteamdb
+      SECRET_KEY:    change-this-to-a-long-random-secret-key
+      OLLAMA_URL:    http://ollama:11434
+      OLLAMA_MODEL:  llama3
+      NVIDIA_API_KEY: ${NVIDIA_API_KEY:-}
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./central-server:/app
+      - ./mitre:/app/mitre
+
+  # ── Ollama (local LLM) ──────────────────────────────────────────────────────
+  ollama:
+    image: ollama/ollama:latest
+    container_name: redteam-ollama
+    restart: unless-stopped
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama-data:/root/.ollama
+    # After first start, pull a model:
+    # docker exec redteam-ollama ollama pull llama3
+
+  # ── Frontend (React dashboard) ─────────────────────────────────────────────
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: ../docker/Dockerfile.frontend
+    container_name: redteam-ui
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    depends_on:
+      - server
+
+volumes:
+  pgdata:
+  ollama-data:

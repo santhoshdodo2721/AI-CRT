@@ -1,0 +1,356 @@
+# MITRE ATT&CK → Module Mapping
+# Format: technique_id → name, module, tool, params, tactic
+
+# ── Reconnaissance ────────────────────────────────────────────────────────────
+T1595:
+  name: Active Scanning
+  module: recon.subdomain_scan
+  tool: subfinder/amass
+  tactic: reconnaissance
+  params:
+    domain: "{{target}}"
+
+T1595.001:
+  name: Scanning IP Blocks
+  module: recon.nmap_scan
+  tool: nmap
+  tactic: reconnaissance
+  params:
+    target: "{{target}}"
+    ports: "1-65535"
+    flags: "-sV -sC"
+
+T1595.002:
+  name: Vulnerability Scanning
+  module: vuln_scan.nuclei_scan
+  tool: nuclei
+  tactic: reconnaissance
+  params:
+    target: "{{target}}"
+    severity: "medium,high,critical"
+
+T1592:
+  name: Gather Victim Host Information
+  module: recon.http_probe
+  tool: httpx
+  tactic: reconnaissance
+  params:
+    target: "{{target}}"
+
+T1046:
+  name: Network Service Discovery
+  module: recon.nmap_scan
+  tool: nmap
+  tactic: discovery
+  params:
+    target: "{{target}}"
+    ports: "1-65535"
+    flags: "-sV"
+
+T1018:
+  name: Remote System Discovery
+  module: lateral_movement.network_reachability
+  tool: custom/socket
+  tactic: discovery
+  params:
+    network: "{{target}}"
+
+# ── Initial Access ────────────────────────────────────────────────────────────
+T1078:
+  name: Valid Accounts (Default Credentials)
+  module: initial_access.default_creds_check
+  tool: custom
+  tactic: initial-access
+  params:
+    target: "{{target}}"
+
+T1133:
+  name: External Remote Services
+  module: initial_access.exposed_admin_check
+  tool: custom
+  tactic: initial-access
+  params:
+    target: "{{target}}"
+
+T1190:
+  name: Exploit Public-Facing Application
+  module: initial_access.known_cve_check
+  tool: nuclei
+  tactic: initial-access
+  params:
+    target: "{{target}}"
+
+T1203:
+  name: Exploitation for Client Execution
+  module: vuln_scan.nuclei_scan
+  tool: nuclei
+  tactic: initial-access
+  params:
+    target: "{{target}}"
+    severity: "high,critical"
+
+# ── Execution ─────────────────────────────────────────────────────────────────
+T1059:
+  name: Command and Scripting Interpreter
+  module: execution.command_test
+  tool: Atomic Red Team
+  tactic: execution
+  params: {}
+
+T1059.003:
+  name: Windows Command Shell
+  module: execution.command_test
+  tool: Atomic Red Team
+  tactic: execution
+  params: {}
+
+T1059.004:
+  name: Unix Shell
+  module: execution.atomic_runner
+  tool: Atomic Red Team
+  tactic: execution
+  params: {}
+
+# ── Persistence ───────────────────────────────────────────────────────────────
+T1053:
+  name: Scheduled Task/Job
+  module: persistence.cron_test
+  tool: custom
+  tactic: persistence
+  params: {}
+
+T1053.003:
+  name: Cron
+  module: persistence.cron_test
+  tool: custom
+  tactic: persistence
+  params: {}
+
+T1543:
+  name: Create or Modify System Process
+  module: persistence.systemd_test
+  tool: custom
+  tactic: persistence
+  params: {}
+
+T1543.002:
+  name: Systemd Service
+  module: persistence.systemd_test
+  tool: custom
+  tactic: persistence
+  params: {}
+
+T1547:
+  name: Boot or Logon Autostart Execution
+  module: persistence.startup_folder_test
+  tool: custom
+  tactic: persistence
+  params: {}
+
+# ── Privilege Escalation ──────────────────────────────────────────────────────
+T1548:
+  name: Abuse Elevation Control Mechanism
+  module: privilege_escalation.sudo_check
+  tool: custom/linpeas
+  tactic: privilege-escalation
+  params: {}
+
+T1548.001:
+  name: Setuid and Setgid
+  module: privilege_escalation.suid_check
+  tool: custom
+  tactic: privilege-escalation
+  params: {}
+
+T1574:
+  name: Hijack Execution Flow
+  module: privilege_escalation.writable_path_check
+  tool: custom
+  tactic: privilege-escalation
+  params: {}
+
+T1068:
+  name: Exploitation for Privilege Escalation
+  module: privilege_escalation.kernel_check
+  tool: custom
+  tactic: privilege-escalation
+  params: {}
+
+T1611:
+  name: Escape to Host
+  module: privilege_escalation.sudo_check
+  tool: custom
+  tactic: privilege-escalation
+  params: {}
+
+# ── Defense Evasion ───────────────────────────────────────────────────────────
+T1027:
+  name: Obfuscated Files or Information
+  module: defense_evasion.encoded_command_test
+  tool: custom
+  tactic: defense-evasion
+  params: {}
+
+T1070:
+  name: Indicator Removal
+  module: defense_evasion.log_delete_simulation
+  tool: custom
+  tactic: defense-evasion
+  params: {}
+
+T1070.001:
+  name: Clear Windows Event Logs
+  module: defense_evasion.log_delete_simulation
+  tool: custom
+  tactic: defense-evasion
+  params: {}
+
+T1562:
+  name: Impair Defenses
+  module: defense_evasion.detection_check
+  tool: custom
+  tactic: defense-evasion
+  params: {}
+
+T1036:
+  name: Masquerading
+  module: defense_evasion.encoded_command_test
+  tool: custom
+  tactic: defense-evasion
+  params: {}
+
+# ── Credential Access ─────────────────────────────────────────────────────────
+T1552:
+  name: Unsecured Credentials
+  module: credentials.env_secret_scan
+  tool: custom/gitleaks
+  tactic: credential-access
+  params: {}
+
+T1552.001:
+  name: Credentials in Files
+  module: credentials.config_secret_scan
+  tool: gitleaks/truffleHog
+  tactic: credential-access
+  params: {}
+
+T1552.004:
+  name: Private Keys
+  module: credentials.env_secret_scan
+  tool: custom
+  tactic: credential-access
+  params: {}
+
+T1213:
+  name: Data from Information Repositories
+  module: credentials.repo_secret_scan
+  tool: gitleaks
+  tactic: credential-access
+  params: {}
+
+T1528:
+  name: Steal Application Access Token
+  module: credentials.token_check
+  tool: custom
+  tactic: credential-access
+  params: {}
+
+# ── Lateral Movement ──────────────────────────────────────────────────────────
+T1021:
+  name: Remote Services
+  module: lateral_movement.network_reachability
+  tool: custom/nmap
+  tactic: lateral-movement
+  params:
+    network: "{{target}}"
+
+T1021.002:
+  name: SMB/Windows Admin Shares
+  module: lateral_movement.smb_check
+  tool: custom
+  tactic: lateral-movement
+  params:
+    target: "{{target}}"
+
+T1021.004:
+  name: SSH
+  module: lateral_movement.ssh_check
+  tool: custom
+  tactic: lateral-movement
+  params:
+    target: "{{target}}"
+
+T1021.006:
+  name: Windows Remote Management
+  module: lateral_movement.rdp_check
+  tool: custom
+  tactic: lateral-movement
+  params:
+    target: "{{target}}"
+
+T1570:
+  name: Lateral Tool Transfer
+  module: lateral_movement.network_reachability
+  tool: custom
+  tactic: lateral-movement
+  params:
+    network: "{{target}}"
+
+# ── Collection ────────────────────────────────────────────────────────────────
+T1005:
+  name: Data from Local System
+  module: exfiltration.dummy_file_create
+  tool: custom
+  tactic: collection
+  params: {}
+
+T1074:
+  name: Data Staged
+  module: exfiltration.dummy_file_create
+  tool: custom
+  tactic: collection
+  params: {}
+
+# ── Exfiltration ──────────────────────────────────────────────────────────────
+T1048:
+  name: Exfiltration Over Alternative Protocol
+  module: exfiltration.egress_test
+  tool: custom/curl
+  tactic: exfiltration
+  params: {}
+
+T1041:
+  name: Exfiltration Over C2 Channel
+  module: exfiltration.dlp_check
+  tool: custom
+  tactic: exfiltration
+  params: {}
+
+T1567:
+  name: Exfiltration Over Web Service
+  module: exfiltration.egress_test
+  tool: custom
+  tactic: exfiltration
+  params: {}
+
+# ── Impact ────────────────────────────────────────────────────────────────────
+T1496:
+  name: Resource Hijacking
+  module: impact.cpu_load_test
+  tool: custom
+  tactic: impact
+  params: {}
+
+T1489:
+  name: Service Stop
+  module: impact.service_stop_lab
+  tool: custom
+  tactic: impact
+  params: {}
+
+T1485:
+  name: Data Destruction
+  module: impact.file_rename_test
+  tool: custom
+  tactic: impact
+  params: {}
