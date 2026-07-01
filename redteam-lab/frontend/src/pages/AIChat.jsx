@@ -15,7 +15,7 @@ const AIChat = () => {
   }, [messages]);
 
   const handleSend = async (e) => {
-    e.preventDefault();
+    if (e && e.preventDefault) e.preventDefault();
     if (!input.trim() || loading) return;
 
     const userMsg = input.trim();
@@ -51,16 +51,23 @@ const AIChat = () => {
       <div className="glass-panel flex-1 flex flex-col p-0 overflow-hidden border border-white/10" style={{ height: 'calc(100vh - 200px)' }}>
         <div className="flex-1 overflow-y-auto p-6 space-y-6 custom-scrollbar">
           {messages.map((msg, i) => (
-            <div key={i} className={`flex gap-4 ${msg.role === 'user' ? 'flex-row-reverse' : ''}`}>
-              <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center ${
-                msg.role === 'user' ? 'bg-blue-600' : 'bg-purple-600'
+            <div 
+              key={i} 
+              className={`flex gap-4 ${msg.role === 'user' ? 'flex-row-reverse' : ''}`}
+              style={{
+                animation: `slideIn${msg.role === 'user' ? 'Right' : 'Left'} 0.4s ease-out forwards`,
+                opacity: 0
+              }}
+            >
+              <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center shadow-lg ${
+                msg.role === 'user' ? 'bg-blue-600 shadow-blue-500/40' : 'bg-purple-600 shadow-purple-500/40'
               }`}>
                 {msg.role === 'user' ? <User size={16} className="text-white" /> : <Bot size={16} className="text-white" />}
               </div>
-              <div className={`max-w-[80%] rounded-2xl px-5 py-3 ${
+              <div className={`max-w-[80%] rounded-2xl px-5 py-3 shadow-lg ${
                 msg.role === 'user' 
-                  ? 'bg-blue-600/20 border border-blue-500/30 text-blue-100 rounded-tr-none'
-                  : 'bg-white/5 border border-white/10 text-gray-200 rounded-tl-none leading-relaxed'
+                  ? 'bg-gradient-to-r from-blue-600/30 to-blue-500/20 border border-blue-500/30 text-blue-50 rounded-tr-none backdrop-blur-sm'
+                  : 'bg-gradient-to-r from-purple-500/10 to-white/5 border border-purple-500/20 text-gray-100 rounded-tl-none leading-relaxed backdrop-blur-sm'
               }`}>
                 {msg.text}
               </div>
@@ -82,18 +89,24 @@ const AIChat = () => {
         </div>
 
         <div className="p-4 bg-black/40 border-t border-white/5">
-          <form onSubmit={handleSend} className="relative flex items-center">
-            <input 
-              type="text"
+          <form onSubmit={handleSend} className="relative flex items-end">
+            <textarea 
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Ask the orchestrator..."
-              className="w-full bg-black/60 border border-white/10 rounded-xl py-4 pl-4 pr-14 text-white focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all placeholder-gray-500"
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                  e.preventDefault();
+                  handleSend(e);
+                }
+              }}
+              placeholder="Ask the orchestrator... (Press Enter to send, Shift+Enter for new line)"
+              className="w-full bg-black/60 border border-white/10 rounded-xl py-4 pl-4 pr-16 text-white focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all placeholder-gray-500 resize-none"
+              rows={3}
             />
             <button 
               type="submit"
               disabled={loading || !input.trim()}
-              className="absolute right-2 p-2 rounded-lg bg-purple-600 text-white hover:bg-purple-500 disabled:opacity-50 transition-colors"
+              className="absolute right-3 bottom-3 p-2.5 rounded-lg bg-purple-600 text-white hover:bg-purple-500 disabled:opacity-50 transition-colors shadow-lg"
             >
               <Send size={18} />
             </button>

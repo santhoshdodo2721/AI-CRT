@@ -36,4 +36,14 @@ allowed_modules:
   - lateral_movement.ssh_check
   - exfiltration.egress_test
   - exfiltration.dlp_check
+  - exfiltration.dummy_file_create
   - impact.cpu_load_test
+  - impact.file_rename_test
+  - impact.service_stop_lab
+  - initial_access.netexec_smb
+  - initial_access.phishing_sim
+  - initial_access.brute_force_ssh
+  - execution.powershell_test
+  - execution.bash_test
+  - persistence.user_add_test
+  - persistence.ssh_key_test
