@@ -89,3 +89,8 @@
 2026-07-01 14:36:47,300 [INFO] [TASK_RUNNER] Submitting result for task 9f804975-78a2-4499-8ed2-b0e642f7ee16 (completed)
 2026-07-01 14:36:57,438 [INFO] [TASK_RUNNER] Received task caea463a-0e2b-40fa-926d-e2f58e5c189c: vuln_scan.nuclei_scan
 2026-07-01 14:36:57,438 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/vuln_scan/nuclei_scan.py 110.172.151.102
+2026-07-01 14:40:37,644 [INFO] [TASK_RUNNER] Submitting result for task caea463a-0e2b-40fa-926d-e2f58e5c189c (completed)
+2026-07-01 14:40:57,723 [INFO] [TASK_RUNNER] Received task c7586ce4-aa32-4193-a938-26e087fb2e7f: initial_access.netexec_smb
+2026-07-01 14:40:57,724 [INFO] [TASK_RUNNER] Submitting result for task c7586ce4-aa32-4193-a938-26e087fb2e7f (completed)
+2026-07-01 14:41:07,819 [INFO] [TASK_RUNNER] Received task 8382d09b-28fd-4407-ac39-5ccedeb7e19f: initial_access.netexec_smb
+2026-07-01 14:41:07,819 [INFO] [TASK_RUNNER] Submitting result for task 8382d09b-28fd-4407-ac39-5ccedeb7e19f (completed)
