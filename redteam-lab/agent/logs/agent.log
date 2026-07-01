@@ -94,3 +94,5 @@
 2026-07-01 14:40:57,724 [INFO] [TASK_RUNNER] Submitting result for task c7586ce4-aa32-4193-a938-26e087fb2e7f (completed)
 2026-07-01 14:41:07,819 [INFO] [TASK_RUNNER] Received task 8382d09b-28fd-4407-ac39-5ccedeb7e19f: initial_access.netexec_smb
 2026-07-01 14:41:07,819 [INFO] [TASK_RUNNER] Submitting result for task 8382d09b-28fd-4407-ac39-5ccedeb7e19f (completed)
+2026-07-01 15:00:48,580 [INFO] [TASK_RUNNER] Received task 1b0d376a-58df-408a-aba6-18bf5aa35ba0: recon.nmap_scan
+2026-07-01 15:00:48,580 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/nmap_scan.py 110.172.151.102
