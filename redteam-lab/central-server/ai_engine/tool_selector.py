@@ -13,7 +13,7 @@ AVAILABLE_TOOLS = [
     {"name": "recon.http_probe", "description": "HTTP probe for active web servers", "category": "http_probe"},
     {"name": "vuln_scan.nuclei_scan", "description": "Web vulnerability scanner", "category": "web_vuln_scan"},
     {"name": "vuln_scan.sql_inject", "description": "SQL Injection tester", "category": "sql_inject"},
-    {"name": "initial_access.netexec_smb", "description": "SMB authentication and share mapping", "category": "smb_auth_check"},
+    {"name": "initial_access.default_creds_check", "description": "HTTP default credentials brute-force checker", "category": "smb_auth_check"},
     {"name": "initial_access.exposed_admin_check", "description": "Check for exposed admin panels", "category": "admin_check"},
     {"name": "initial_access.brute_force_ssh", "description": "SSH brute force simulation", "category": "ssh_brute"},
     {"name": "execution.command_test", "description": "Simulate command execution", "category": "execution"},
@@ -31,14 +31,22 @@ async def select_tool_for_action(action: dict, available_tools: List[dict] = AVA
     """Uses the LLM to choose the best tool for the desired action."""
     
     prompt = f"""
-Desired Action:
-{json.dumps(action, indent=2)}
-
-Available Tools:
-{json.dumps(available_tools, indent=2)}
-
-Select the most appropriate tool and define its parameters.
-"""
+    Desired Action:
+    {json.dumps(action, indent=2)}
+    
+    Available Tools:
+    {json.dumps(available_tools, indent=2)}
+    
+    Select the most appropriate tool and define its parameters.
+    """
     
     decision = await ask_json(prompt, system_prompt=TOOL_SELECTOR_SYSTEM)
-    return decision or {"tool_name": None, "reasoning": "Fallback due to LLM failure"}
+    if not decision:
+        return {"tool_name": None, "reasoning": "Fallback due to LLM failure"}
+
+    # Fallback/Translation Layer: Map legacy or LLM hallucinations to actual target scripts
+    tool_name = decision.get("tool_name")
+    if tool_name == "initial_access.netexec_smb":
+        decision["tool_name"] = "initial_access.default_creds_check"
+        
+    return decision
