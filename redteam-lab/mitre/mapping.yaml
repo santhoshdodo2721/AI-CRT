@@ -10,30 +10,62 @@ modules:
       tool: "nmap"
       risk_level: "low"
     subdomain_scan:
-      technique_id: T1595.002
-      technique_name: "Active Scanning"
+      technique_id: T1596
+      technique_name: "Search Open Technical Databases"
       tactics: ["Reconnaissance"]
-      subtechniques: []
-      description: "Subdomain enumeration"
+      subtechniques: [T1596.001]
+      description: "Subdomain enumeration via passive sources"
       tool: "subfinder, amass"
       risk_level: "low"
+    http_probe:
+      technique_id: T1590
+      technique_name: "Gather Victim Network Information"
+      tactics: ["Reconnaissance"]
+      subtechniques: [T1590.005]
+      description: "Probe live web applications"
+      tool: "httpx"
+      risk_level: "low"
+  resource_development:
+    acquire_infrastructure:
+      technique_id: T1583
+      technique_name: "Acquire Infrastructure"
+      tactics: ["Resource Development"]
+      subtechniques: []
+      description: "Mock acquisition of infrastructure"
+      tool: "custom"
+      risk_level: "none"
   initial_access:
-    default_creds_check:
-      technique_id: T1078
-      technique_name: "Valid Accounts"
-      tactics: ["Initial Access"]
-      subtechniques: [T1078.001]
-      description: "Check for default credentials"
-      tool: "hydra"
-      risk_level: "medium"
-      requires_approval: true
-    known_cve_check:
+    nuclei_scan:
+      technique_id: T1595.002
+      technique_name: "Active Scanning: Vulnerability Scanning"
+      tactics: ["Reconnaissance"]
+      subtechniques: []
+      description: "Template-based vulnerability scanning"
+      tool: "nuclei"
+      risk_level: "low"
+    trivy_scan:
       technique_id: T1190
       technique_name: "Exploit Public-Facing Application"
       tactics: ["Initial Access"]
       subtechniques: []
-      description: "Check for known CVEs"
-      tool: "nuclei"
+      description: "CVE scanning of filesystems/containers"
+      tool: "trivy"
+      risk_level: "low"
+    semgrep_scan:
+      technique_id: T1190
+      technique_name: "Exploit Public-Facing Application"
+      tactics: ["Initial Access"]
+      subtechniques: []
+      description: "SAST scanning for code vulnerabilities"
+      tool: "semgrep"
+      risk_level: "low"
+    phishing_simulation:
+      technique_id: T1566
+      technique_name: "Phishing"
+      tactics: ["Initial Access"]
+      subtechniques: []
+      description: "Simulated phishing link test"
+      tool: "gophish"
       risk_level: "low"
   execution:
     atomic_runner:
@@ -80,14 +112,39 @@ modules:
       description: "Test encoded command execution"
       tool: "custom"
       risk_level: "low"
+    file_deletion:
+      technique_id: T1070.004
+      technique_name: "Indicator Removal: File Deletion"
+      tactics: ["Defense Evasion"]
+      subtechniques: []
+      description: "Test file deletion"
+      tool: "custom"
+      risk_level: "low"
   credential_access:
-    env_secret_scan:
+    gitleaks_scan:
       technique_id: T1552.001
       technique_name: "Unsecured Credentials: In Files"
       tactics: ["Credential Access"]
       subtechniques: []
-      description: "Scan env files for secrets"
-      tool: "trufflehog"
+      description: "Scan code repositories for hardcoded secrets"
+      tool: "gitleaks"
+      risk_level: "low"
+    os_credential_dump:
+      technique_id: T1003
+      technique_name: "OS Credential Dumping"
+      tactics: ["Credential Access"]
+      subtechniques: []
+      description: "Simulate dumping OS credentials"
+      tool: "custom"
+      risk_level: "medium"
+  discovery:
+    system_info_discovery:
+      technique_id: T1082
+      technique_name: "System Information Discovery"
+      tactics: ["Discovery"]
+      subtechniques: []
+      description: "Discover system info"
+      tool: "custom"
       risk_level: "low"
   lateral_movement:
     ssh_check:
@@ -98,6 +155,33 @@ modules:
       description: "SSH lateral movement testing"
       tool: "ssh"
       risk_level: "low"
+  collection:
+    data_from_local_system:
+      technique_id: T1005
+      technique_name: "Data from Local System"
+      tactics: ["Collection"]
+      subtechniques: []
+      description: "Collect data from local system"
+      tool: "custom"
+      risk_level: "low"
+  command_and_control:
+    ingress_tool_transfer:
+      technique_id: T1105
+      technique_name: "Ingress Tool Transfer"
+      tactics: ["Command and Control"]
+      subtechniques: []
+      description: "Download tools onto system"
+      tool: "curl"
+      risk_level: "low"
+  exfiltration:
+    exfiltration_over_c2:
+      technique_id: T1041
+      technique_name: "Exfiltration Over C2 Channel"
+      tactics: ["Exfiltration"]
+      subtechniques: []
+      description: "Exfiltrate data over C2"
+      tool: "custom"
+      risk_level: "medium"
   impact:
     cpu_load_test:
       technique_id: T1499.001
@@ -109,22 +193,10 @@ modules:
       risk_level: "medium"
       requires_approval: true
 playbooks:
-  full_chain_linux:
-    name: "Full Attack Chain - Linux"
+  full_recon_vuln:
+    name: "Automated Recon and Vuln Mapping"
     phases:
       - name: "Recon"
-        techniques: ["T1046"]
-      - name: "Initial Access"
-        techniques: ["T1078.001"]
-      - name: "Execution"
-        techniques: ["T1059.004"]
-      - name: "Lateral Movement"
-        techniques: ["T1021.004"]
-  phishing_simulation:
-    technique_id: T1566.002
-    technique_name: "Spearphishing Link"
-    tactics: ["Initial Access"]
-    subtechniques: []
-    description: "Simulated phishing link test"
-    tool: "gophish"
-    risk_level: "low"
+        techniques: ["T1046", "T1596", "T1590"]
+      - name: "Vuln Discovery"
+        techniques: ["T1595.002", "T1190", "T1552.001"]

@@ -16,27 +16,51 @@
       "enabled": true
     },
     {
-      "techniqueID": "T1595.002",
+      "techniqueID": "T1596",
       "tactic": "reconnaissance",
       "score": 100,
       "color": "#66ff66",
-      "comment": "subdomain_scan: Subdomain enumeration",
+      "comment": "subdomain_scan: Subdomain enumeration via passive sources",
       "enabled": true
     },
     {
-      "techniqueID": "T1078",
-      "tactic": "initial-access",
+      "techniqueID": "T1596.001",
+      "tactic": "reconnaissance",
       "score": 100,
       "color": "#66ff66",
-      "comment": "default_creds_check: Check for default credentials",
+      "comment": "subdomain_scan (sub-tech)",
       "enabled": true
     },
     {
-      "techniqueID": "T1078.001",
+      "techniqueID": "T1590",
+      "tactic": "reconnaissance",
+      "score": 100,
+      "color": "#66ff66",
+      "comment": "http_probe: Probe live web applications",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1590.005",
+      "tactic": "reconnaissance",
+      "score": 100,
+      "color": "#66ff66",
+      "comment": "http_probe (sub-tech)",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1583",
+      "tactic": "resource_development",
+      "score": 100,
+      "color": "#66ff66",
+      "comment": "acquire_infrastructure: Mock acquisition of infrastructure",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1595.002",
       "tactic": "initial-access",
       "score": 100,
       "color": "#66ff66",
-      "comment": "default_creds_check (sub-tech)",
+      "comment": "nuclei_scan: Template-based vulnerability scanning",
       "enabled": true
     },
     {
@@ -44,7 +68,23 @@
       "tactic": "initial-access",
       "score": 100,
       "color": "#66ff66",
-      "comment": "known_cve_check: Check for known CVEs",
+      "comment": "trivy_scan: CVE scanning of filesystems/containers",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1190",
+      "tactic": "initial-access",
+      "score": 100,
+      "color": "#66ff66",
+      "comment": "semgrep_scan: SAST scanning for code vulnerabilities",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1566",
+      "tactic": "initial-access",
+      "score": 100,
+      "color": "#66ff66",
+      "comment": "phishing_simulation: Simulated phishing link test",
       "enabled": true
     },
     {
@@ -96,11 +136,35 @@
       "enabled": true
     },
     {
+      "techniqueID": "T1070.004",
+      "tactic": "defense-evasion",
+      "score": 100,
+      "color": "#66ff66",
+      "comment": "file_deletion: Test file deletion",
+      "enabled": true
+    },
+    {
       "techniqueID": "T1552.001",
       "tactic": "credential_access",
       "score": 100,
       "color": "#66ff66",
-      "comment": "env_secret_scan: Scan env files for secrets",
+      "comment": "gitleaks_scan: Scan code repositories for hardcoded secrets",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1003",
+      "tactic": "credential_access",
+      "score": 100,
+      "color": "#66ff66",
+      "comment": "os_credential_dump: Simulate dumping OS credentials",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1082",
+      "tactic": "discovery",
+      "score": 100,
+      "color": "#66ff66",
+      "comment": "system_info_discovery: Discover system info",
       "enabled": true
     },
     {
@@ -109,6 +173,30 @@
       "score": 100,
       "color": "#66ff66",
       "comment": "ssh_check: SSH lateral movement testing",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1005",
+      "tactic": "collection",
+      "score": 100,
+      "color": "#66ff66",
+      "comment": "data_from_local_system: Collect data from local system",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1105",
+      "tactic": "command_and_control",
+      "score": 100,
+      "color": "#66ff66",
+      "comment": "ingress_tool_transfer: Download tools onto system",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1041",
+      "tactic": "exfiltration",
+      "score": 100,
+      "color": "#66ff66",
+      "comment": "exfiltration_over_c2: Exfiltrate data over C2",
       "enabled": true
     },
     {

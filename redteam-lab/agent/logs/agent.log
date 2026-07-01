@@ -1,0 +1,82 @@
+2026-07-01 09:03:03,352 [INFO] [TASK_RUNNER] Starting task runner loop for agent 3ea5c066-3c64-4c37-ad78-b326ecfde9f0 (Poll interval: 10s)
+2026-07-01 09:03:53,418 [INFO] [TASK_RUNNER] Received task 677de472-6a6a-40ac-b081-9547963f4cdf: recon.nmap_scan
+2026-07-01 09:03:53,419 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/nmap_scan.py 10.20.27.0/24
+2026-07-01 09:03:55,471 [INFO] [TASK_RUNNER] Submitting result for task 677de472-6a6a-40ac-b081-9547963f4cdf (completed)
+2026-07-01 09:04:05,639 [INFO] [TASK_RUNNER] Received task fd47f35b-921b-4cc8-b8a6-ffc23891dfdc: vuln_scan.nuclei_scan
+2026-07-01 09:04:05,640 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/vuln_scan/nuclei_scan.py 10.20.27.0/24
+2026-07-01 09:04:07,676 [INFO] [TASK_RUNNER] Submitting result for task fd47f35b-921b-4cc8-b8a6-ffc23891dfdc (completed)
+2026-07-01 09:04:27,826 [INFO] [TASK_RUNNER] Received task 02cc4a77-5ad0-4472-bc3a-ae38abbb7784: vuln_scan.nuclei_scan
+2026-07-01 09:04:27,826 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/vuln_scan/nuclei_scan.py 10.20.27.0/24
+2026-07-01 09:04:29,863 [INFO] [TASK_RUNNER] Submitting result for task 02cc4a77-5ad0-4472-bc3a-ae38abbb7784 (completed)
+2026-07-01 09:04:39,955 [INFO] [TASK_RUNNER] Received task b6b3fcc9-131e-4d34-820b-2a644c2891f3: recon.nmap_scan
+2026-07-01 09:04:39,956 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/nmap_scan.py 10.20.27.0/24 8000
+2026-07-01 09:04:42,008 [INFO] [TASK_RUNNER] Submitting result for task b6b3fcc9-131e-4d34-820b-2a644c2891f3 (completed)
+2026-07-01 09:20:02,832 [INFO] [TASK_RUNNER] Received task 9df8ba0e-6b6b-4214-bfdc-b697cfa2af10: recon.nmap_scan
+2026-07-01 09:20:02,832 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/nmap_scan.py 10.20.27.0/24 8000
+2026-07-01 09:20:50,072 [INFO] [TASK_RUNNER] Submitting result for task 9df8ba0e-6b6b-4214-bfdc-b697cfa2af10 (completed)
+2026-07-01 09:20:50,075 [ERROR] [TASK_RUNNER] Failed to submit result for task 9df8ba0e-6b6b-4214-bfdc-b697cfa2af10: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2026-07-01 09:21:30,227 [INFO] [TASK_RUNNER] Received task 2b89eb17-b32b-4319-b69d-459587f62279: vuln_scan.nuclei_scan
+2026-07-01 09:21:30,227 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/vuln_scan/nuclei_scan.py 10.20.27.0/24
+2026-07-01 09:21:32,261 [INFO] [TASK_RUNNER] Submitting result for task 2b89eb17-b32b-4319-b69d-459587f62279 (completed)
+2026-07-01 09:21:52,301 [INFO] [TASK_RUNNER] Received task 161e3140-3d1b-47ad-bd0a-58cfbe72880f: vuln_scan.nuclei_scan
+2026-07-01 09:21:52,301 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/vuln_scan/nuclei_scan.py 10.20.27.0/24
+2026-07-01 09:21:54,332 [INFO] [TASK_RUNNER] Submitting result for task 161e3140-3d1b-47ad-bd0a-58cfbe72880f (completed)
+2026-07-01 09:22:04,368 [INFO] [TASK_RUNNER] Received task 5bca8321-b92d-441a-aa81-384bb3dc8fae: recon.nmap_scan
+2026-07-01 09:22:04,369 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/nmap_scan.py 10.20.27.0/24 8000
+2026-07-01 09:22:54,225 [INFO] [TASK_RUNNER] Submitting result for task 5bca8321-b92d-441a-aa81-384bb3dc8fae (completed)
+2026-07-01 09:22:54,227 [ERROR] [TASK_RUNNER] Failed to submit result for task 5bca8321-b92d-441a-aa81-384bb3dc8fae: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2026-07-01 09:43:35,156 [INFO] [TASK_RUNNER] Received task 5e93dc7d-b092-4a7d-b153-f54fc642004c: recon.nmap_scan
+2026-07-01 09:43:35,157 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/nmap_scan.py 10.20.27.0/24 8000
+2026-07-01 09:44:28,110 [INFO] [TASK_RUNNER] Submitting result for task 5e93dc7d-b092-4a7d-b153-f54fc642004c (completed)
+2026-07-01 09:44:38,139 [INFO] [TASK_RUNNER] Received task 92c95342-9fdf-402b-bf80-abea3851ff54: vuln_scan.nuclei_scan
+2026-07-01 09:44:38,139 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/vuln_scan/nuclei_scan.py 10.20.27.0/24
+2026-07-01 09:44:38,290 [INFO] [TASK_RUNNER] Submitting result for task 92c95342-9fdf-402b-bf80-abea3851ff54 (completed)
+2026-07-01 09:44:48,334 [INFO] [TASK_RUNNER] Received task 0410d178-5331-483b-a4cc-62a4ef29281d: vuln_scan.nuclei_scan
+2026-07-01 09:44:48,335 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/vuln_scan/nuclei_scan.py 10.20.27.0/24
+2026-07-01 09:44:48,364 [INFO] [TASK_RUNNER] Submitting result for task 0410d178-5331-483b-a4cc-62a4ef29281d (completed)
+2026-07-01 09:44:58,550 [INFO] [TASK_RUNNER] Received task d1c7aa44-f8d9-4696-b86c-2f705aaef9c9: recon.nmap_scan
+2026-07-01 09:44:58,550 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/nmap_scan.py 10.20.27.0/24 8000
+2026-07-01 09:45:52,537 [INFO] [TASK_RUNNER] Submitting result for task d1c7aa44-f8d9-4696-b86c-2f705aaef9c9 (completed)
+2026-07-01 10:12:04,223 [INFO] [TASK_RUNNER] Received task ccdbd430-6925-4316-accc-9cec38e33b40: recon.nmap_scan
+2026-07-01 10:12:04,226 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/nmap_scan.py 110.172.151.102
+2026-07-01 10:13:28,948 [INFO] [TASK_RUNNER] Submitting result for task ccdbd430-6925-4316-accc-9cec38e33b40 (completed)
+2026-07-01 10:13:38,982 [INFO] [TASK_RUNNER] Received task d6e30296-c097-4b4d-bb1a-7bce6cf7dab9: vuln_scan.nuclei_scan
+2026-07-01 10:13:38,983 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/vuln_scan/nuclei_scan.py 110.172.151.102
+2026-07-01 10:14:41,854 [INFO] [TASK_RUNNER] Submitting result for task d6e30296-c097-4b4d-bb1a-7bce6cf7dab9 (completed)
+2026-07-01 10:14:51,923 [INFO] [TASK_RUNNER] Received task f23c005b-0d0d-4f76-92e1-7e63e2f45680: initial_access.netexec_smb
+2026-07-01 10:14:51,923 [WARNING] [TASK_RUNNER] Module initial_access.netexec_smb is NOT in allowed_modules. Rejecting.
+2026-07-01 10:14:51,923 [INFO] [TASK_RUNNER] Submitting result for task f23c005b-0d0d-4f76-92e1-7e63e2f45680 (failed)
+2026-07-01 10:15:01,964 [INFO] [TASK_RUNNER] Received task 607f33fa-5497-4c4b-a27d-b184d01f4a35: initial_access.netexec_smb
+2026-07-01 10:15:01,964 [WARNING] [TASK_RUNNER] Module initial_access.netexec_smb is NOT in allowed_modules. Rejecting.
+2026-07-01 10:15:01,965 [INFO] [TASK_RUNNER] Submitting result for task 607f33fa-5497-4c4b-a27d-b184d01f4a35 (failed)
+2026-07-01 10:25:42,634 [INFO] [TASK_RUNNER] Received task 3db076fe-28a2-4434-a0c8-e8e426364eee: recon.subdomain_scan
+2026-07-01 10:25:42,635 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/subdomain_scan.py www.amazon.in
+2026-07-01 10:25:47,555 [INFO] [TASK_RUNNER] Submitting result for task 3db076fe-28a2-4434-a0c8-e8e426364eee (completed)
+2026-07-01 10:25:57,685 [INFO] [TASK_RUNNER] Received task ffff1e50-a93a-4048-bdb0-dc194000d6a4: vuln_scan.nuclei_scan
+2026-07-01 10:25:57,686 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/vuln_scan/nuclei_scan.py www.amazon.in
+2026-07-01 10:26:30,430 [INFO] [TASK_RUNNER] Submitting result for task ffff1e50-a93a-4048-bdb0-dc194000d6a4 (completed)
+2026-07-01 10:26:40,463 [INFO] [TASK_RUNNER] Received task 38a991e3-6023-4b48-b7db-edaa4c018df6: initial_access.netexec_smb
+2026-07-01 10:26:40,463 [WARNING] [TASK_RUNNER] Module initial_access.netexec_smb is NOT in allowed_modules. Rejecting.
+2026-07-01 10:26:40,463 [INFO] [TASK_RUNNER] Submitting result for task 38a991e3-6023-4b48-b7db-edaa4c018df6 (failed)
+2026-07-01 10:26:50,494 [INFO] [TASK_RUNNER] Received task 4603a72c-1bd7-4a40-a6d3-7a384591c58d: initial_access.netexec_smb
+2026-07-01 10:26:50,495 [WARNING] [TASK_RUNNER] Module initial_access.netexec_smb is NOT in allowed_modules. Rejecting.
+2026-07-01 10:26:50,495 [INFO] [TASK_RUNNER] Submitting result for task 4603a72c-1bd7-4a40-a6d3-7a384591c58d (failed)
+2026-07-01 13:04:19,299 [INFO] [TASK_RUNNER] Starting task runner loop for agent 3ea5c066-3c64-4c37-ad78-b326ecfde9f0 (Poll interval: 10s)
+2026-07-01 13:04:19,308 [INFO] [TASK_RUNNER] Received task aef32b2d-1b72-4079-b6d4-cceb2810726d: recon.nmap_scan
+2026-07-01 13:04:19,308 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/nmap_scan.py 110.172.151.102
+2026-07-01 13:05:08,027 [INFO] [TASK_RUNNER] Submitting result for task aef32b2d-1b72-4079-b6d4-cceb2810726d (completed)
+2026-07-01 13:05:18,052 [INFO] [TASK_RUNNER] Received task 39d41427-45bc-43eb-ba3d-23b734bb5619: vuln_scan.nuclei_scan
+2026-07-01 13:05:18,052 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/vuln_scan/nuclei_scan.py 110.172.151.102
+2026-07-01 13:05:50,840 [INFO] [TASK_RUNNER] Submitting result for task 39d41427-45bc-43eb-ba3d-23b734bb5619 (completed)
+2026-07-01 13:06:10,880 [INFO] [TASK_RUNNER] Received task 47ca7f10-1470-47e3-8531-aa1dfd472b59: initial_access.netexec_smb
+2026-07-01 13:06:10,880 [WARNING] [TASK_RUNNER] Module initial_access.netexec_smb is NOT in allowed_modules. Rejecting.
+2026-07-01 13:06:10,880 [INFO] [TASK_RUNNER] Submitting result for task 47ca7f10-1470-47e3-8531-aa1dfd472b59 (failed)
+2026-07-01 13:06:20,906 [INFO] [TASK_RUNNER] Received task 1d5cfd74-cbdb-46d4-8679-14aac42e33c3: initial_access.netexec_smb
+2026-07-01 13:06:20,906 [WARNING] [TASK_RUNNER] Module initial_access.netexec_smb is NOT in allowed_modules. Rejecting.
+2026-07-01 13:06:20,906 [INFO] [TASK_RUNNER] Submitting result for task 1d5cfd74-cbdb-46d4-8679-14aac42e33c3 (failed)
+2026-07-01 13:13:41,173 [INFO] [TASK_RUNNER] Received task 536e5b97-68cb-41d4-b287-8f3ec716d66a: recon.subdomain_scan
+2026-07-01 13:13:41,174 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/subdomain_scan.py www.vulnhub.com
+2026-07-01 13:14:07,999 [INFO] [TASK_RUNNER] Submitting result for task 536e5b97-68cb-41d4-b287-8f3ec716d66a (completed)
+2026-07-01 13:14:18,023 [INFO] [TASK_RUNNER] Received task c2569309-6d88-4909-967f-b90c84bbf3c1: recon.nmap_scan
+2026-07-01 13:14:18,023 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/nmap_scan.py www.vulnhub.com 1-65535
+2026-07-01 14:00:01,535 [INFO] [TASK_RUNNER] Submitting result for task c2569309-6d88-4909-967f-b90c84bbf3c1 (completed)

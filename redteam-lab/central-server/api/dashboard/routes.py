@@ -53,3 +53,27 @@ def get_dashboard_stats(db: Session = Depends(get_db), _=Depends(get_current_use
         },
         "top_mitre": [{"id": m[0], "count": m[1]} for m in top_mitre]
     }
+
+from database.db import CampaignMemory, HostMemory, Campaign
+
+@router.get("/campaign/{campaign_id}/memory")
+def get_campaign_memory(campaign_id: str, db: Session = Depends(get_db), _=Depends(get_current_user)):
+    campaign = db.query(Campaign).filter(Campaign.id == campaign_id).first()
+    memory = db.query(CampaignMemory).filter(CampaignMemory.campaign_id == campaign_id).first()
+    hosts = db.query(HostMemory).filter(HostMemory.campaign_id == campaign_id).all()
+    
+    return {
+        "memory": {
+            "phase": memory.phase if memory else "INITIALIZING",
+            "target": campaign.target if campaign else "Unknown",
+            "state": memory.global_state if memory else {}
+        },
+        "hosts": [
+            {
+                "ip": h.ip_address,
+                "hostname": h.hostname,
+                "open_ports": h.open_ports,
+                "vulns": h.vulns
+            } for h in hosts
+        ]
+    }

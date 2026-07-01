@@ -8,29 +8,6 @@ from api.auth.utils import hash_password, verify_password, create_access_token
 router = APIRouter()
 
 
-class RegisterRequest(BaseModel):
-    username: str
-    email: EmailStr
-    password: str
-    role: str = "operator"
-
-
-@router.post("/register")
-def register(req: RegisterRequest, db: Session = Depends(get_db)):
-    if db.query(User).filter(User.username == req.username).first():
-        raise HTTPException(status_code=400, detail="Username already exists")
-    user = User(
-        username=req.username,
-        email=req.email,
-        password=hash_password(req.password),
-        role=req.role,
-    )
-    db.add(user)
-    db.commit()
-    db.refresh(user)
-    return {"id": user.id, "username": user.username, "role": user.role}
-
-
 @router.post("/login")
 def login(form: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(get_db)):
     user = db.query(User).filter(User.username == form.username).first()

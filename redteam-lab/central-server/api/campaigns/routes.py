@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from pydantic import BaseModel
-from typing import List, Optional
+from typing import List, Optional, Dict
 from database.db import get_db, Campaign, Task, Finding
 from api.auth.utils import get_current_user, require_role
 
@@ -9,24 +9,51 @@ router = APIRouter()
 
 
 class CampaignCreate(BaseModel):
-    name:        str
-    description: Optional[str] = ""
-    target:      str            # IP, domain, or CIDR
+    name: str
+    target: str
+    description: str = ""
+    credentials: List[Dict[str, str]] = []
+    scope_config: Dict[str, str] = {}
+    ai_enabled: bool = True
 
 
-@router.post("/")
-def create_campaign(req: CampaignCreate, db: Session = Depends(get_db), user=Depends(require_role("admin", "operator"))):
-    c = Campaign(name=req.name, description=req.description, target=req.target, created_by=user.id)
-    db.add(c)
+@router.post("/", response_model=dict)
+def create_campaign(camp: CampaignCreate, db: Session = Depends(get_db), current_user = Depends(get_current_user)):
+    new_camp = Campaign(
+        name=camp.name,
+        target=camp.target,
+        description=camp.description,
+        created_by=current_user.id,
+        credentials=camp.credentials,
+        scope_config=camp.scope_config,
+        ai_enabled=camp.ai_enabled
+    )
+    db.add(new_camp)
     db.commit()
-    db.refresh(c)
-    return {"id": c.id, "name": c.name, "target": c.target, "status": c.status}
+    db.refresh(new_camp)
+    return {"message": "Campaign created", "id": new_camp.id}
 
 
 @router.get("/")
 def list_campaigns(db: Session = Depends(get_db), _=Depends(get_current_user)):
     campaigns = db.query(Campaign).all()
-    return [{"id": c.id, "name": c.name, "target": c.target, "status": c.status} for c in campaigns]
+    return [{"id": c.id, "name": c.name, "target": c.target, "status": c.status, "description": c.description} for c in campaigns]
+
+
+@router.get("/findings/all")
+def get_all_findings(db: Session = Depends(get_db), _=Depends(get_current_user)):
+    findings = db.query(Finding).all()
+    return [
+        {
+            "id": f.id,
+            "campaign_id": f.campaign_id,
+            "title": f.title,
+            "severity": f.severity,
+            "mitre_id": f.mitre_id,
+            "created_at": f.created_at
+        }
+        for f in findings
+    ]
 
 
 @router.get("/{campaign_id}")
