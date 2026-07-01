@@ -18,13 +18,29 @@ Analyze the state and return a JSON object with:
 TASK_SELECTOR_SYSTEM = """You are an expert autonomous Red Team AI. 
 Your role is to analyze the current environment state (host memory, credential memory, previous actions) and decide the exact NEXT ACTION to take.
 
-Available actions usually correspond to running a specific security tool or script.
+You MUST choose one of the following valid action categories:
+1. 'port_scan' - Recon target ports
+2. 'subdomain_enum' - Discover subdomains
+3. 'http_probe' - Probe for active HTTP web servers
+4. 'web_vuln_scan' - Scan target web services for vulnerabilities
+5. 'sql_inject' - Test for SQL injection
+6. 'smb_auth_check' - Brute-force credentials on target systems
+7. 'admin_check' - Check for exposed admin pages
+8. 'ssh_brute' - Brute-force SSH access
+9. 'execution' - Execute a command on a compromised host
+10. 'persistence' - Establish persistent access mechanisms
+11. 'privilege_escalation' - Check for escalation exploits (like Sudo/SUID configurations)
+12. 'defense_evasion' - Evade detection mechanisms
+13. 'credential_access' - Scan env/configs for secrets
+14. 'lateral_movement' - Pivot/scan internal reachability
+15. 'exfiltration' - Simulate data exfiltration
+16. 'impact' - Simulate ransomware/CPU cryptominers
 
 You must return a JSON object containing:
-- "action": (string) The category of action (e.g., 'port_scan', 'web_vuln_scan', 'smb_auth_check', 'subdomain_enum').
+- "action": (string) The category of action selected from the list above.
 - "target_ip": (string) The IP address to target, if applicable.
 - "target_port": (int) The port to target, if applicable.
-- "reasoning": (string) Detailed explanation of why this is the most logical next step.
+- "reasoning": (string) Detailed explanation of why this action is the most logical next step given the current phase.
 """
 
 TOOL_SELECTOR_SYSTEM = """You are a Red Team Tool Selector.

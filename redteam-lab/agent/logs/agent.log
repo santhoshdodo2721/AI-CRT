@@ -96,3 +96,25 @@
 2026-07-01 14:41:07,819 [INFO] [TASK_RUNNER] Submitting result for task 8382d09b-28fd-4407-ac39-5ccedeb7e19f (completed)
 2026-07-01 15:00:48,580 [INFO] [TASK_RUNNER] Received task 1b0d376a-58df-408a-aba6-18bf5aa35ba0: recon.nmap_scan
 2026-07-01 15:00:48,580 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/nmap_scan.py 110.172.151.102
+2026-07-01 15:01:30,942 [INFO] [TASK_RUNNER] Submitting result for task 1b0d376a-58df-408a-aba6-18bf5aa35ba0 (completed)
+2026-07-01 15:01:41,012 [INFO] [TASK_RUNNER] Received task 87a60c00-9aa5-470e-b60e-ef5bdbdb4d68: vuln_scan.nuclei_scan
+2026-07-01 15:01:41,012 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/vuln_scan/nuclei_scan.py 110.172.151.102
+2026-07-01 15:06:06,906 [INFO] [TASK_RUNNER] Submitting result for task 87a60c00-9aa5-470e-b60e-ef5bdbdb4d68 (completed)
+2026-07-01 15:06:16,991 [INFO] [TASK_RUNNER] Received task 8914589d-eac1-4518-950d-b793d573e36f: initial_access.default_creds_check
+2026-07-01 15:06:16,992 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/initial_access/default_creds_check.py 110.172.151.102
+2026-07-01 15:06:18,399 [INFO] [TASK_RUNNER] Submitting result for task 8914589d-eac1-4518-950d-b793d573e36f (completed)
+2026-07-01 15:06:28,455 [INFO] [TASK_RUNNER] Received task 4f95fdd8-2fac-42f4-b10f-c10e5d562d96: initial_access.default_creds_check
+2026-07-01 15:06:28,455 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/initial_access/default_creds_check.py 110.172.151.102
+2026-07-01 15:06:34,682 [INFO] [TASK_RUNNER] Submitting result for task 4f95fdd8-2fac-42f4-b10f-c10e5d562d96 (completed)
+2026-07-01 15:10:34,928 [INFO] [TASK_RUNNER] Received task 22c1ac73-5ecd-47a3-91d5-bfbf240a85ea: recon.http_probe
+2026-07-01 15:10:34,928 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py web.whatsapp.com
+2026-07-01 15:10:38,541 [INFO] [TASK_RUNNER] Submitting result for task 22c1ac73-5ecd-47a3-91d5-bfbf240a85ea (completed)
+2026-07-01 15:10:58,574 [INFO] [TASK_RUNNER] Received task c935babe-690b-44ec-8075-8cb5b589d519: recon.http_probe
+2026-07-01 15:10:58,574 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py web.whatsapp.com
+2026-07-01 15:11:01,892 [INFO] [TASK_RUNNER] Submitting result for task c935babe-690b-44ec-8075-8cb5b589d519 (completed)
+2026-07-01 15:11:12,128 [INFO] [TASK_RUNNER] Received task 6eabed0b-43d5-4b7b-83b8-eaf9e8b7a5b7: recon.http_probe
+2026-07-01 15:11:12,129 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py web.whatsapp.com
+2026-07-01 15:11:16,016 [INFO] [TASK_RUNNER] Submitting result for task 6eabed0b-43d5-4b7b-83b8-eaf9e8b7a5b7 (completed)
+2026-07-01 15:11:26,191 [INFO] [TASK_RUNNER] Received task c5e44522-7ebe-434b-bf37-a0180a63d38a: vuln_scan.nuclei_scan
+2026-07-01 15:11:26,192 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/vuln_scan/nuclei_scan.py web.whatsapp.com
+2026-07-01 15:16:26,280 [INFO] [TASK_RUNNER] Submitting result for task c5e44522-7ebe-434b-bf37-a0180a63d38a (completed)

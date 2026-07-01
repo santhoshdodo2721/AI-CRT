@@ -109,10 +109,15 @@ def delete_campaign(campaign_id: str, db: Session = Depends(get_db), _=Depends(r
         raise HTTPException(status_code=404, detail="Campaign not found")
     
     # Manual cascading delete
+    from database.db import Report, HostMemory, CredentialStore, AIDecisionLog, CampaignMemory, ToolExecution
     db.query(Finding).filter(Finding.campaign_id == campaign_id).delete(synchronize_session=False)
     db.query(Task).filter(Task.campaign_id == campaign_id).delete(synchronize_session=False)
-    from database.db import Report
     db.query(Report).filter(Report.campaign_id == campaign_id).delete(synchronize_session=False)
+    db.query(HostMemory).filter(HostMemory.campaign_id == campaign_id).delete(synchronize_session=False)
+    db.query(CredentialStore).filter(CredentialStore.campaign_id == campaign_id).delete(synchronize_session=False)
+    db.query(AIDecisionLog).filter(AIDecisionLog.campaign_id == campaign_id).delete(synchronize_session=False)
+    db.query(CampaignMemory).filter(CampaignMemory.campaign_id == campaign_id).delete(synchronize_session=False)
+    db.query(ToolExecution).filter(ToolExecution.campaign_id == campaign_id).delete(synchronize_session=False)
     
     db.delete(c)
     db.commit()

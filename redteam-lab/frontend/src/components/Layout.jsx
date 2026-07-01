@@ -15,6 +15,16 @@ const SidebarLink = ({ to, icon: Icon, label }) => (
 
 const Layout = () => {
   const navigate = useNavigate();
+  const [theme, setTheme] = React.useState(localStorage.getItem('theme') || 'dark');
+
+  React.useEffect(() => {
+    if (theme === 'light') {
+      document.body.classList.add('light-mode');
+    } else {
+      document.body.classList.remove('light-mode');
+    }
+    localStorage.setItem('theme', theme);
+  }, [theme]);
 
   const handleLogout = () => {
     setAuthToken(null);
@@ -54,7 +64,7 @@ const Layout = () => {
 
         <div className="sidebar-footer" style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
           <button 
-            onClick={() => document.body.classList.toggle('light-mode')} 
+            onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')} 
             className="logout-btn"
             style={{ color: 'var(--text-accent)' }}
           >
