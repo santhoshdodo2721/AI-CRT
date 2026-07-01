@@ -16,7 +16,9 @@ async def validate_tool_output(tool_name: str, raw_output: str) -> bool:
         "segmentation fault",
         "no such file or directory",
         "permission denied",
-        "traceback (most recent call last)"
+        "traceback (most recent call last)",
+        "timed out",
+        "timeout expired"
     ]
     
     for sig in error_sigs:
