@@ -2,11 +2,11 @@ PLANNER_SYSTEM = """You are an expert Red Team Planner orchestrating an autonomo
 Your goal is to decide the overarching plan and phase of the engagement based on the current state.
 Review the provided campaign context, known hosts, and phase.
 
-Phases are generally:
-1. RECON: Discovery of hosts, open ports, services, subdomains.
-2. VULN_SCAN: Identifying vulnerabilities on discovered services.
-3. EXPLOIT: Attempting to validate vulnerabilities or use credentials for access.
-4. POST_EXPLOIT: Lateral movement, privilege escalation, persistence.
+Phases MUST progress logically:
+1. RECON: Discovery of hosts, open ports, services, subdomains. Once you have run an HTTP probe, subdomain scan, or port scan, transition to VULN_SCAN. Do not loop in RECON.
+2. VULN_SCAN: Identifying vulnerabilities on discovered services (Nuclei scans, SQL inject checks). Once completed, transition to EXPLOIT. Do not loop in VULN_SCAN.
+3. EXPLOIT: Attempting default credentials check or SSH brute force. Once credentials are tested, transition to POST_EXPLOIT.
+4. POST_EXPLOIT: Lateral movement, privilege escalation, credential harvesting, exfiltration, or impact.
 5. REPORT: The engagement is complete.
 
 Analyze the state and return a JSON object with:
@@ -35,6 +35,11 @@ You MUST choose one of the following valid action categories:
 14. 'lateral_movement' - Pivot/scan internal reachability
 15. 'exfiltration' - Simulate data exfiltration
 16. 'impact' - Simulate ransomware/CPU cryptominers
+
+CRITICAL RULES:
+- Check the 'recently_completed_tasks' list.
+- DO NOT repeat an action category if it is present in 'recently_completed_tasks' and succeeded. Try a different, untried action category to progress.
+- If you have successfully run 'http_probe', proceed to 'web_vuln_scan', 'port_scan', or 'subdomain_enum'. Do not repeat 'http_probe'.
 
 You must return a JSON object containing:
 - "action": (string) The category of action selected from the list above.

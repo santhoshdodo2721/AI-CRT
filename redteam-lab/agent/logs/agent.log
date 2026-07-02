@@ -118,3 +118,154 @@
 2026-07-01 15:11:26,191 [INFO] [TASK_RUNNER] Received task c5e44522-7ebe-434b-bf37-a0180a63d38a: vuln_scan.nuclei_scan
 2026-07-01 15:11:26,192 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/vuln_scan/nuclei_scan.py web.whatsapp.com
 2026-07-01 15:16:26,280 [INFO] [TASK_RUNNER] Submitting result for task c5e44522-7ebe-434b-bf37-a0180a63d38a (completed)
+2026-07-01 15:28:57,866 [INFO] [TASK_RUNNER] Starting task runner loop for agent 3ea5c066-3c64-4c37-ad78-b326ecfde9f0 (Poll interval: 10s)
+2026-07-01 15:30:17,928 [INFO] [TASK_RUNNER] Received task 68c13a91-d6cc-4371-aed7-73f4cef12ab9: recon.http_probe
+2026-07-01 15:30:17,929 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:30:34,675 [INFO] [TASK_RUNNER] Submitting result for task 68c13a91-d6cc-4371-aed7-73f4cef12ab9 (completed)
+2026-07-01 15:30:44,701 [INFO] [TASK_RUNNER] Received task 6faa5041-e0f4-4124-b160-236ae667aeeb: recon.http_probe
+2026-07-01 15:30:44,701 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:30:57,090 [INFO] [TASK_RUNNER] Submitting result for task 6faa5041-e0f4-4124-b160-236ae667aeeb (completed)
+2026-07-01 15:31:07,120 [INFO] [TASK_RUNNER] Received task 0fbbb43a-c1bf-42dc-8432-8c2d030c4244: recon.http_probe
+2026-07-01 15:31:07,120 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:31:19,336 [INFO] [TASK_RUNNER] Submitting result for task 0fbbb43a-c1bf-42dc-8432-8c2d030c4244 (completed)
+2026-07-01 15:31:39,521 [INFO] [TASK_RUNNER] Received task 79c17a86-3609-46ef-b2ec-81685bc69eec: recon.http_probe
+2026-07-01 15:31:39,522 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:31:51,771 [INFO] [TASK_RUNNER] Submitting result for task 79c17a86-3609-46ef-b2ec-81685bc69eec (completed)
+2026-07-01 15:32:11,830 [INFO] [TASK_RUNNER] Received task cb6b751a-1bdb-45da-8e2c-dba81ce8cc53: recon.http_probe
+2026-07-01 15:32:11,830 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:32:26,260 [INFO] [TASK_RUNNER] Submitting result for task cb6b751a-1bdb-45da-8e2c-dba81ce8cc53 (completed)
+2026-07-01 15:33:06,301 [INFO] [TASK_RUNNER] Received task c96b00e0-3950-4374-a4f8-fb0f001825d1: recon.http_probe
+2026-07-01 15:33:06,301 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:33:19,507 [INFO] [TASK_RUNNER] Submitting result for task c96b00e0-3950-4374-a4f8-fb0f001825d1 (completed)
+2026-07-01 15:33:39,577 [INFO] [TASK_RUNNER] Received task a27b5b54-a3b2-4567-a878-1983fdfad9f7: recon.http_probe
+2026-07-01 15:33:39,577 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:33:52,307 [INFO] [TASK_RUNNER] Submitting result for task a27b5b54-a3b2-4567-a878-1983fdfad9f7 (completed)
+2026-07-01 15:34:12,335 [INFO] [TASK_RUNNER] Received task 576068c2-2dc4-4a93-a678-46d237d1382a: recon.http_probe
+2026-07-01 15:34:12,335 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:34:24,871 [INFO] [TASK_RUNNER] Submitting result for task 576068c2-2dc4-4a93-a678-46d237d1382a (completed)
+2026-07-01 15:34:44,932 [INFO] [TASK_RUNNER] Received task 7632b62c-2f3b-4c68-8fe9-92588c322bb6: recon.http_probe
+2026-07-01 15:34:44,933 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:34:57,432 [INFO] [TASK_RUNNER] Submitting result for task 7632b62c-2f3b-4c68-8fe9-92588c322bb6 (completed)
+2026-07-01 15:35:17,517 [INFO] [TASK_RUNNER] Received task d1cc1108-5a7b-4439-bdab-b9e938496095: recon.http_probe
+2026-07-01 15:35:17,517 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:35:29,998 [INFO] [TASK_RUNNER] Submitting result for task d1cc1108-5a7b-4439-bdab-b9e938496095 (completed)
+2026-07-01 15:35:40,065 [INFO] [TASK_RUNNER] Received task a9698ce9-b996-4a9e-949a-827633969a94: recon.http_probe
+2026-07-01 15:35:40,065 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:35:53,031 [INFO] [TASK_RUNNER] Submitting result for task a9698ce9-b996-4a9e-949a-827633969a94 (completed)
+2026-07-01 15:36:03,099 [INFO] [TASK_RUNNER] Received task d8980a2d-ae63-4c77-a5d2-3eabd27c912e: recon.http_probe
+2026-07-01 15:36:03,099 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:36:15,226 [INFO] [TASK_RUNNER] Submitting result for task d8980a2d-ae63-4c77-a5d2-3eabd27c912e (completed)
+2026-07-01 15:36:25,321 [INFO] [TASK_RUNNER] Received task b345c388-eff8-4420-a547-66b3fe35aa3b: recon.http_probe
+2026-07-01 15:36:25,321 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:36:37,880 [INFO] [TASK_RUNNER] Submitting result for task b345c388-eff8-4420-a547-66b3fe35aa3b (completed)
+2026-07-01 15:36:58,018 [INFO] [TASK_RUNNER] Received task 915d5b07-eb34-448d-93cf-738b6caf6dba: recon.http_probe
+2026-07-01 15:36:58,018 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:37:10,431 [INFO] [TASK_RUNNER] Submitting result for task 915d5b07-eb34-448d-93cf-738b6caf6dba (completed)
+2026-07-01 15:37:20,462 [INFO] [TASK_RUNNER] Received task c01a860c-c2f2-4612-a0cd-b81f1b56b437: recon.http_probe
+2026-07-01 15:37:20,462 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:37:33,483 [INFO] [TASK_RUNNER] Submitting result for task c01a860c-c2f2-4612-a0cd-b81f1b56b437 (completed)
+2026-07-01 15:37:43,510 [INFO] [TASK_RUNNER] Received task 55a8d726-c183-41ba-ac02-95b3653db936: recon.http_probe
+2026-07-01 15:37:43,510 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:37:56,224 [INFO] [TASK_RUNNER] Submitting result for task 55a8d726-c183-41ba-ac02-95b3653db936 (completed)
+2026-07-01 15:38:16,389 [INFO] [TASK_RUNNER] Received task a0645266-6413-4ad5-baef-aceef7d0cf7d: recon.http_probe
+2026-07-01 15:38:16,389 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:38:29,166 [INFO] [TASK_RUNNER] Submitting result for task a0645266-6413-4ad5-baef-aceef7d0cf7d (completed)
+2026-07-01 15:38:49,330 [INFO] [TASK_RUNNER] Received task 16a31702-52bf-42b7-a22b-4fc4b0bebf2c: recon.http_probe
+2026-07-01 15:38:49,330 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:39:02,611 [INFO] [TASK_RUNNER] Submitting result for task 16a31702-52bf-42b7-a22b-4fc4b0bebf2c (completed)
+2026-07-01 15:39:22,649 [INFO] [TASK_RUNNER] Received task f2d5fcae-9a2c-481d-ada6-27c6f2db8a0e: recon.http_probe
+2026-07-01 15:39:22,649 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:39:35,763 [INFO] [TASK_RUNNER] Submitting result for task f2d5fcae-9a2c-481d-ada6-27c6f2db8a0e (completed)
+2026-07-01 15:39:45,833 [INFO] [TASK_RUNNER] Received task ecc40425-fdd9-4b83-8dc2-bddca05f2a8c: recon.http_probe
+2026-07-01 15:39:45,833 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:39:58,481 [INFO] [TASK_RUNNER] Submitting result for task ecc40425-fdd9-4b83-8dc2-bddca05f2a8c (completed)
+2026-07-01 15:40:08,549 [INFO] [TASK_RUNNER] Received task 0f92f16b-365a-46a6-817c-2d0357d94508: recon.http_probe
+2026-07-01 15:40:08,549 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:40:21,608 [INFO] [TASK_RUNNER] Submitting result for task 0f92f16b-365a-46a6-817c-2d0357d94508 (completed)
+2026-07-01 15:40:41,775 [INFO] [TASK_RUNNER] Received task b9663b0b-bb18-43fc-90f4-b8dc42462c80: recon.http_probe
+2026-07-01 15:40:41,776 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:40:54,385 [INFO] [TASK_RUNNER] Submitting result for task b9663b0b-bb18-43fc-90f4-b8dc42462c80 (completed)
+2026-07-01 15:41:14,456 [INFO] [TASK_RUNNER] Received task d1047f7a-ceba-4bfe-a74b-d6c39fe1f17f: recon.http_probe
+2026-07-01 15:41:14,456 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:41:26,842 [INFO] [TASK_RUNNER] Submitting result for task d1047f7a-ceba-4bfe-a74b-d6c39fe1f17f (completed)
+2026-07-01 15:41:46,967 [INFO] [TASK_RUNNER] Received task de6c2e2e-18d9-4033-a148-1caacd2c5b79: recon.http_probe
+2026-07-01 15:41:46,967 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:42:00,433 [INFO] [TASK_RUNNER] Submitting result for task de6c2e2e-18d9-4033-a148-1caacd2c5b79 (completed)
+2026-07-01 15:42:20,596 [INFO] [TASK_RUNNER] Received task 612efd82-4fa2-4e3f-9347-3215cc2db583: recon.http_probe
+2026-07-01 15:42:20,596 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:42:35,469 [INFO] [TASK_RUNNER] Submitting result for task 612efd82-4fa2-4e3f-9347-3215cc2db583 (completed)
+2026-07-01 15:42:45,539 [INFO] [TASK_RUNNER] Received task 2457d336-4ff7-456c-8a60-89ac2ad6c346: recon.http_probe
+2026-07-01 15:42:45,539 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:42:58,517 [INFO] [TASK_RUNNER] Submitting result for task 2457d336-4ff7-456c-8a60-89ac2ad6c346 (completed)
+2026-07-01 15:43:08,623 [INFO] [TASK_RUNNER] Received task aa67ff23-b753-4358-ba16-abb1c511aff4: recon.http_probe
+2026-07-01 15:43:08,623 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:43:23,695 [INFO] [TASK_RUNNER] Submitting result for task aa67ff23-b753-4358-ba16-abb1c511aff4 (completed)
+2026-07-01 15:43:33,855 [INFO] [TASK_RUNNER] Received task db628c34-079d-4509-a966-3652f24d368e: recon.http_probe
+2026-07-01 15:43:33,855 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:43:46,764 [INFO] [TASK_RUNNER] Submitting result for task db628c34-079d-4509-a966-3652f24d368e (completed)
+2026-07-01 15:43:56,948 [INFO] [TASK_RUNNER] Received task e34df6f0-5c48-45da-af97-7fc83a2557de: recon.http_probe
+2026-07-01 15:43:56,948 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:44:09,539 [INFO] [TASK_RUNNER] Submitting result for task e34df6f0-5c48-45da-af97-7fc83a2557de (completed)
+2026-07-01 15:44:19,604 [INFO] [TASK_RUNNER] Received task c4ace6f9-6334-4c31-923a-df3bcdf29771: recon.http_probe
+2026-07-01 15:44:19,604 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:44:32,494 [INFO] [TASK_RUNNER] Submitting result for task c4ace6f9-6334-4c31-923a-df3bcdf29771 (completed)
+2026-07-01 15:44:52,695 [INFO] [TASK_RUNNER] Received task 6ffed1f2-7f06-49d7-880b-685e1cc30be3: recon.http_probe
+2026-07-01 15:44:52,695 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:45:07,404 [INFO] [TASK_RUNNER] Submitting result for task 6ffed1f2-7f06-49d7-880b-685e1cc30be3 (completed)
+2026-07-01 15:45:17,457 [INFO] [TASK_RUNNER] Received task 4f19ba92-348a-4496-8057-7eac9b4bc005: recon.http_probe
+2026-07-01 15:45:17,457 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:45:30,257 [INFO] [TASK_RUNNER] Submitting result for task 4f19ba92-348a-4496-8057-7eac9b4bc005 (completed)
+2026-07-01 15:45:50,355 [INFO] [TASK_RUNNER] Received task f629deae-8fe2-47da-8b85-7ed82e4f79e4: recon.http_probe
+2026-07-01 15:45:50,355 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:46:03,302 [INFO] [TASK_RUNNER] Submitting result for task f629deae-8fe2-47da-8b85-7ed82e4f79e4 (completed)
+2026-07-01 15:46:23,411 [INFO] [TASK_RUNNER] Received task 9838eeb3-4f54-434d-ace7-d006be6e8147: recon.http_probe
+2026-07-01 15:46:23,411 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:46:35,999 [INFO] [TASK_RUNNER] Submitting result for task 9838eeb3-4f54-434d-ace7-d006be6e8147 (completed)
+2026-07-01 15:46:46,063 [INFO] [TASK_RUNNER] Received task 55afec88-2a22-45ae-9cbb-ea71fc9a8730: recon.http_probe
+2026-07-01 15:46:46,064 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:46:58,903 [INFO] [TASK_RUNNER] Submitting result for task 55afec88-2a22-45ae-9cbb-ea71fc9a8730 (completed)
+2026-07-01 15:47:09,008 [INFO] [TASK_RUNNER] Received task 5333760b-5271-4a1e-93f8-4d85eb6282d8: recon.http_probe
+2026-07-01 15:47:09,008 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:47:22,067 [INFO] [TASK_RUNNER] Submitting result for task 5333760b-5271-4a1e-93f8-4d85eb6282d8 (completed)
+2026-07-01 15:47:32,093 [INFO] [TASK_RUNNER] Received task 8d25e729-eb0d-4919-84ca-061e1f22acb5: recon.http_probe
+2026-07-01 15:47:32,093 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:47:44,794 [INFO] [TASK_RUNNER] Submitting result for task 8d25e729-eb0d-4919-84ca-061e1f22acb5 (completed)
+2026-07-01 15:47:54,858 [INFO] [TASK_RUNNER] Received task cdca0339-3c97-495a-b34c-f987d2d9418e: recon.http_probe
+2026-07-01 15:47:54,859 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:48:10,615 [INFO] [TASK_RUNNER] Submitting result for task cdca0339-3c97-495a-b34c-f987d2d9418e (completed)
+2026-07-01 15:48:20,679 [INFO] [TASK_RUNNER] Received task 74247316-d81e-46e8-af8c-a7b69ffc2e9d: recon.http_probe
+2026-07-01 15:48:20,680 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:48:36,095 [INFO] [TASK_RUNNER] Submitting result for task 74247316-d81e-46e8-af8c-a7b69ffc2e9d (completed)
+2026-07-01 15:48:56,129 [INFO] [TASK_RUNNER] Received task 1e3714a1-d5ab-4fd6-8b01-ae5ae2b85f15: recon.http_probe
+2026-07-01 15:48:56,130 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:49:09,283 [INFO] [TASK_RUNNER] Submitting result for task 1e3714a1-d5ab-4fd6-8b01-ae5ae2b85f15 (completed)
+2026-07-01 15:49:29,421 [INFO] [TASK_RUNNER] Received task 03dc3e2a-befc-4414-911e-b39dea0d400f: recon.http_probe
+2026-07-01 15:49:29,421 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:49:42,458 [INFO] [TASK_RUNNER] Submitting result for task 03dc3e2a-befc-4414-911e-b39dea0d400f (completed)
+2026-07-01 15:49:52,525 [INFO] [TASK_RUNNER] Received task b71530db-ff0b-411d-b5b0-38c4ab593d39: recon.http_probe
+2026-07-01 15:49:52,525 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:50:05,486 [INFO] [TASK_RUNNER] Submitting result for task b71530db-ff0b-411d-b5b0-38c4ab593d39 (completed)
+2026-07-01 15:50:15,553 [INFO] [TASK_RUNNER] Received task 5e9235f4-b8a8-425d-be92-e180e644fa20: recon.http_probe
+2026-07-01 15:50:15,553 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:50:27,922 [INFO] [TASK_RUNNER] Submitting result for task 5e9235f4-b8a8-425d-be92-e180e644fa20 (completed)
+2026-07-01 15:50:48,021 [INFO] [TASK_RUNNER] Received task 02d36aac-692b-492b-aa46-c594a7c02349: recon.http_probe
+2026-07-01 15:50:48,021 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:51:00,493 [INFO] [TASK_RUNNER] Submitting result for task 02d36aac-692b-492b-aa46-c594a7c02349 (completed)
+2026-07-01 15:51:20,529 [INFO] [TASK_RUNNER] Received task ffa2971b-595f-4b85-946e-7b72c7da73e6: recon.http_probe
+2026-07-01 15:51:20,529 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:51:33,054 [INFO] [TASK_RUNNER] Submitting result for task ffa2971b-595f-4b85-946e-7b72c7da73e6 (completed)
+2026-07-01 15:51:53,082 [INFO] [TASK_RUNNER] Received task 007b4beb-967d-4330-8dd2-1128e9604759: recon.http_probe
+2026-07-01 15:51:53,082 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:52:05,657 [INFO] [TASK_RUNNER] Submitting result for task 007b4beb-967d-4330-8dd2-1128e9604759 (completed)
+2026-07-01 15:52:15,754 [INFO] [TASK_RUNNER] Received task 580de7c3-4559-474e-8029-dda1e8d09ce8: recon.http_probe
+2026-07-01 15:52:15,755 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:52:28,456 [INFO] [TASK_RUNNER] Submitting result for task 580de7c3-4559-474e-8029-dda1e8d09ce8 (completed)
+2026-07-01 15:52:38,482 [INFO] [TASK_RUNNER] Received task 43981971-313a-42f8-8453-877bf54a2418: recon.http_probe
+2026-07-01 15:52:38,482 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:52:50,861 [INFO] [TASK_RUNNER] Submitting result for task 43981971-313a-42f8-8453-877bf54a2418 (completed)
+2026-07-01 15:53:00,990 [INFO] [TASK_RUNNER] Received task 25068f3c-baa5-4d75-a516-2cb39aee9a14: recon.http_probe
+2026-07-01 15:53:00,990 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:53:13,525 [INFO] [TASK_RUNNER] Submitting result for task 25068f3c-baa5-4d75-a516-2cb39aee9a14 (completed)
+2026-07-01 15:53:23,587 [INFO] [TASK_RUNNER] Received task f5f4f8af-bb3e-4fd3-8afe-8b5b948b63ca: recon.http_probe
+2026-07-01 15:53:23,587 [INFO] [TASK_RUNNER] Executing: python3 /home/dodo/DODO/AI-CRT/redteam-lab/agent/tools/recon/http_probe.py testaspnet.vulnweb.com
+2026-07-01 15:53:35,976 [INFO] [TASK_RUNNER] Submitting result for task f5f4f8af-bb3e-4fd3-8afe-8b5b948b63ca (completed)
